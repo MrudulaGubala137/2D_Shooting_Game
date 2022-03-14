@@ -8,10 +8,12 @@ public class PlayerMovement : MonoBehaviour
     public int speed;
    public GameObject shootPrefab;
     public Vector3 offSet;
+    public int bulletSpeed;
+    Rigidbody2D rb;
 
     void Start()
     {
-       
+    
         
     }
 
@@ -19,8 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
         
     {
-        
-        if(Input.GetKeyDown(KeyCode.LeftArrow)&& transform.position.x>-7.8)
+        if (Input.GetKeyDown(KeyCode.LeftArrow)&& transform.position.x>-7.8)
             {
             transform.Translate(-speed, 0, 0);
         }
@@ -31,10 +32,10 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
 
-             Instantiate(shootPrefab,transform.position+offSet*speed*Time.deltaTime,Quaternion.identity);
-            
-
+           rb = Instantiate(shootPrefab,transform.position+offSet*speed*Time.deltaTime,Quaternion.identity).GetComponent<Rigidbody2D>();
+            rb.AddRelativeForce(new Vector3(0, bulletSpeed, 0));
         }
-        
+
     }
+
 }
