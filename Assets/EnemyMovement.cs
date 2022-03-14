@@ -9,14 +9,14 @@ public class EnemyMovement : MonoBehaviour
     public int enemySpeed;
     void Start()
     {
-        
+        transform.Rotate(0f, 0f, 90.0f, Space.Self);
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        transform.Translate(Vector3.down * enemySpeed * Time.deltaTime);
+        transform.Translate(Vector3.left * enemySpeed * Time.deltaTime);
         
         if (transform.position.y>-4.5f)
         {
@@ -32,7 +32,9 @@ public class EnemyMovement : MonoBehaviour
         }
         else //if(collision.gameObject.tag =="Player")
         {
+          
             SceneManager.LoadScene(0);
+           
         }
     }
 

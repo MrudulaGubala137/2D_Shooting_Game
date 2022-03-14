@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
             
             transform.position = new Vector3(Random.Range(-8.3f, 8.3f), Random.Range(2.0f, 4.2f), 0f);
             Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-            transform.Rotate(0f, 0f, 90.0f, Space.Self);
+            
             time = 0f;
         }
         

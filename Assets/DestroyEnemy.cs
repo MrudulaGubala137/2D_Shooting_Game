@@ -18,8 +18,9 @@ public class DestroyEnemy : MonoBehaviour
         
         if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
             scoreManagerScript.Score(10);
+            Destroy(gameObject);
+            
 
         }
        
