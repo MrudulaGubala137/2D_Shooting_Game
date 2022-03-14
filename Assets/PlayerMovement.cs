@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 offSet;
     public int bulletSpeed;
     Rigidbody2D rb;
-
+    public int score;
     void Start()
     {
     
@@ -37,5 +37,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
 
 }
